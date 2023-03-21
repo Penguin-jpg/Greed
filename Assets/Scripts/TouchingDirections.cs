@@ -8,7 +8,7 @@ public class TouchingDirections : MonoBehaviour
     public float groundDistance = 0.05f;
     public float wallDistance = 0.2f;
     public float ceilingDistance = 0.05f;
-    BoxCollider2D touchingCollider;
+    CapsuleCollider2D touchingCollider;
     Animator animator;
     RaycastHit2D[] groundHits = new RaycastHit2D[5];
     RaycastHit2D[] wallHits = new RaycastHit2D[5];
@@ -63,7 +63,7 @@ public class TouchingDirections : MonoBehaviour
 
     private void Awake()
     {
-        touchingCollider = GetComponent<BoxCollider2D>();
+        touchingCollider = GetComponent<CapsuleCollider2D>();
         animator = GetComponent<Animator>();
     }
 
