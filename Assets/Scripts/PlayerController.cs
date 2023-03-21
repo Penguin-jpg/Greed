@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public float CurrentSpeed { 
         get
         {
-            if(IsMoving && !touchingDirections.IsOnWall)
+            if(CanMove && IsMoving && !touchingDirections.IsOnWall)
             {
                 if(touchingDirections.IsGrounded)
                 {
@@ -66,6 +66,14 @@ public class PlayerController : MonoBehaviour
             _isFacingRight = value;
         } 
     }
+    
+    public bool CanMove
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.canMove);
+        }
+    }
 
     private void Awake()
     {
@@ -91,10 +99,18 @@ public class PlayerController : MonoBehaviour
 
     public void onJump(InputAction.CallbackContext context)
     {
-        if(context.started && touchingDirections.IsGrounded)
+        if(context.started && touchingDirections.IsGrounded && CanMove)
         {
-            animator.SetTrigger(AnimationStrings.jump);
+            animator.SetTrigger(AnimationStrings.jumpTrigger);
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+        }
+    }
+
+    public void onAttack(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            animator.SetTrigger(AnimationStrings.attackTrigger);
         }
     }
 
