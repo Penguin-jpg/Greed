@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Things to do when player moves
-    public void onMove(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
         if(IsAlive)
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void onJump(InputAction.CallbackContext context)
+    public void OnJump(InputAction.CallbackContext context)
     {
         if(context.started && touchingDirections.IsGrounded && CanMove)
         {
@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void onAttack(InputAction.CallbackContext context)
+    public void OnAttack(InputAction.CallbackContext context)
     {
         if(context.started)
         {
@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void onHit(int damage, Vector2 knockback)
+    public void OnHit(int damage, Vector2 knockback)
     {
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }

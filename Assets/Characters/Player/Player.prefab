@@ -239,7 +239,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8954191585396187653}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: onMove
+        m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -259,7 +259,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8954191585396187653}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: onAttack
+        m_MethodName: OnAttack
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -315,7 +315,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8954191585396187653}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: onJump
+        m_MethodName: OnJump
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

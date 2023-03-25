@@ -12,4 +12,5 @@
     internal static string isAlive = "isAlive";
     internal static string hitTrigger = "hit";
     internal static string lockVelocity = "lockVelocity";
+    internal static string attackCooldown = "attackCooldown";
 }
