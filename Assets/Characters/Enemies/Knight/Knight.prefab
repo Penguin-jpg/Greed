@@ -309,7 +309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc5ad34a1057dec4881b70d625a1dcee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  movingAcceleration: 300
+  maxSpeed: 3
   moveStopRate: 0.05
   attackZone: {fileID: 810568713614026503}
   cliffDetectionZone: {fileID: 5977433757937767069}
@@ -382,7 +383,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 273712455366686863}
         m_TargetAssemblyTypeName: Knight, Assembly-CSharp
-        m_MethodName: onHit
+        m_MethodName: OnHit
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

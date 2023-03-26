@@ -503,7 +503,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8954191585396187653}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: onHit
+        m_MethodName: OnHit
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
