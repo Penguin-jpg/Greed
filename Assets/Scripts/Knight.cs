@@ -6,7 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class Knight : MonoBehaviour
 {
-    public float moveSpeed = 3f;
+    public float movingAcceleration = 300f;
+    public float maxSpeed = 3f;
     public float moveStopRate = 0.05f;
     public DetectionZone attackZone, cliffDetectionZone;
     private Rigidbody2D rb;
@@ -90,7 +91,10 @@ public class Knight : MonoBehaviour
         {
             if (CanMove)
             {
-                rb.velocity = new Vector2(moveSpeed * walkDriectionVector.x, rb.velocity.y);
+                rb.velocity = new Vector2(
+                    Mathf.Clamp(rb.velocity.x + (movingAcceleration * walkDriectionVector.x * Time.fixedDeltaTime), -maxSpeed, maxSpeed), 
+                    rb.velocity.y
+                );
             }
             else
             {
