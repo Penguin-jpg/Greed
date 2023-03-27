@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6493165834869652201}
-  - component: {fileID: 5192946051081574470}
+  - component: {fileID: 9009649652500524977}
   - component: {fileID: 3461000500684114309}
   m_Layer: 9
   m_Name: SwordAttack2
@@ -33,8 +33,8 @@ Transform:
   m_Father: {fileID: 4084044982463830709}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &5192946051081574470
-PolygonCollider2D:
+--- !u!61 &9009649652500524977
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -46,7 +46,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.7833257, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,21 +56,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.6225538, y: 1.1126266}
-      - {x: -0.21112394, y: 1.0414381}
-      - {x: 0.09411812, y: 0.8978072}
-      - {x: 0.68667984, y: 0.50442576}
-      - {x: 0.7005563, y: 0.17018059}
-      - {x: 0.6914058, y: -0.13310385}
-      - {x: 0.32930946, y: -0.6074215}
-      - {x: -0.17144626, y: -0.8512064}
-      - {x: -0.57956314, y: -1.0066838}
-      - {x: -0.122963905, y: -0.40528226}
-      - {x: -0.13440454, y: 0.030406237}
-      - {x: -0.9667816, y: 0.5691736}
-      - {x: -0.90469813, y: 0.9262717}
+  serializedVersion: 2
+  m_Size: {x: 2.5666513, y: 1}
+  m_EdgeRadius: 0
 --- !u!114 &3461000500684114309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,6 +73,79 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 20
   knockback: {x: 2, y: 0}
+--- !u!1 &1277972098342528496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5024820588032235438}
+  - component: {fileID: 7196159198164279235}
+  - component: {fileID: 1837870482970255246}
+  m_Layer: 9
+  m_Name: SwordAttack3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5024820588032235438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277972098342528496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4084044982463830709}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &7196159198164279235
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277972098342528496}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.6922412, y: 0.50096416}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3844824, y: 2.22053}
+  m_EdgeRadius: 0
+--- !u!114 &1837870482970255246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277972098342528496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774417552342c0e48b856e0ffd758e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 25
+  knockback: {x: 2, y: 0}
 --- !u!1 &2188461274172642065
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2133471273903756256}
-  - component: {fileID: 2861325154050468908}
+  - component: {fileID: 4622875639272451315}
   - component: {fileID: 1638860732011148507}
   m_Layer: 9
   m_Name: SwordAttack1
@@ -118,8 +179,8 @@ Transform:
   m_Father: {fileID: 4084044982463830709}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &2861325154050468908
-PolygonCollider2D:
+--- !u!61 &4622875639272451315
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -131,7 +192,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.8113072, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -141,17 +202,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.15274715, y: 1.1468635}
-      - {x: -0.028256893, y: 0.79211307}
-      - {x: 0.0069828033, y: 0.19427216}
-      - {x: -0.0602026, y: -0.36471784}
-      - {x: -0.3714251, y: -0.7312192}
-      - {x: 0.3090024, y: -0.6021621}
-      - {x: 0.7577826, y: -0.24410605}
-      - {x: 0.5766792, y: 0.42918843}
-      - {x: 0.18379879, y: 1.1917024}
+  serializedVersion: 2
+  m_Size: {x: 2.6226144, y: 1}
+  m_EdgeRadius: 0
 --- !u!114 &1638860732011148507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +257,7 @@ Transform:
   m_Children:
   - {fileID: 2133471273903756256}
   - {fileID: 6493165834869652201}
+  - {fileID: 5024820588032235438}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -248,7 +302,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9490eb78669fc0741ad8c44a26198797, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 781480ba14314834d8b11042dc3ade92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -292,9 +346,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a91fcad1828b5a4986101382c53614c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingSpeed: 5
-  airMovingSpeed: 3
-  jumpImpulse: 10
+  movingSpeed: 8
+  airMovingSpeed: 5
+  jumpImpulse: 8
   _isMoving: 0
 --- !u!114 &1585545843396267868
 MonoBehaviour:
@@ -451,8 +505,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.35329235, y: -0.32973927}
-  m_Size: {x: 0.8753269, y: 1.9587561}
+  m_Offset: {x: -0.072567105, y: -0.18001908}
+  m_Size: {x: 0.6133168, y: 1.2600619}
   m_Direction: 0
 --- !u!114 &1887706747302626615
 MonoBehaviour:
@@ -513,6 +567,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  damageableDeath:
+    m_PersistentCalls:
+      m_Calls: []
   _maxHealth: 100
   _health: 100
   _isAlive: 1
