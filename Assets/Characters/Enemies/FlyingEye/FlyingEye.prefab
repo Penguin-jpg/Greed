@@ -159,8 +159,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _maxHealth: 30
-  _health: 10
+  _maxHealth: 50
+  _health: 50
   _isAlive: 1
   isInvincible: 0
   invincibilityTime: 1
@@ -193,13 +193,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2000237510328268489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62b9c1d81dc027c4cbee9406036a4ae2, type: 3}
+  m_Script: {fileID: 11500000, guid: cd8bb2309ae8cdd46bbf29e23ef60c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flightSpeed: 3
   biteDetectionZone: {fileID: 6580996863057061529}
   deathCollider: {fileID: 5009962922487494827}
-  waypoints: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   waypointReachedDistance: 0.1
 --- !u!1 &2330043722132950398
 GameObject:

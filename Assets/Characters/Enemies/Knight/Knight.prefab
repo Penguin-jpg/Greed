@@ -294,8 +294,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12850177, y: 0.0020010471}
-  m_Size: {x: 0.9076669, y: 2.1288524}
+  m_Offset: {x: -0.10078335, y: -0.018787384}
+  m_Size: {x: 1.1294107, y: 2.3644552}
   m_Direction: 0
 --- !u!114 &273712455366686863
 MonoBehaviour:
@@ -393,6 +393,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  damageableDeath:
+    m_PersistentCalls:
+      m_Calls: []
   _maxHealth: 100
   _health: 100
   _isAlive: 1
