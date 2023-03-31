@@ -159,11 +159,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
   _maxHealth: 50
   _health: 50
   _isAlive: 1
   isInvincible: 0
-  invincibilityTime: 1
+  invincibilityTime: 0.5
 --- !u!95 &3314722598068676223
 Animator:
   serializedVersion: 5
@@ -193,17 +196,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2000237510328268489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd8bb2309ae8cdd46bbf29e23ef60c51, type: 3}
+  m_Script: {fileID: 11500000, guid: 29d324403ca12d049988360cb51e5aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackZone: {fileID: 6580996863057061529}
   flightSpeed: 3
-  biteDetectionZone: {fileID: 6580996863057061529}
   deathCollider: {fileID: 5009962922487494827}
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  waypoints: []
   waypointReachedDistance: 0.1
 --- !u!1 &2330043722132950398
 GameObject:
@@ -338,7 +337,7 @@ GameObject:
   - component: {fileID: 5529384323913471620}
   - component: {fileID: 6580996863057061529}
   m_Layer: 10
-  m_Name: AttackDetectionZone
+  m_Name: AttackZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

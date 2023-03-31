@@ -14,6 +14,7 @@ AnimatorState:
   m_StateMachineBehaviours:
   - {fileID: -7809336130163226743}
   - {fileID: 397461616485572048}
+  - {fileID: 8610952499834526245}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -582,6 +583,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeTime: 0.5
   fadeDelay: 0
+--- !u!114 &8610952499834526245
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5732e5100f5102b4397fb595e9b32ce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTime: 0.5
+  fadeDelay: 0.5
 --- !u!114 &8679654804818940468
 MonoBehaviour:
   m_ObjectHideFlags: 1

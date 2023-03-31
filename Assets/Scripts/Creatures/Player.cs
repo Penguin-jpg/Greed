@@ -4,35 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))] // Rigidbody2D has to exist
-public class PlayerController : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
+public class Player : Creature
 {
-    public float movingSpeed = 5f;
-    public float airMovingSpeed = 3f;
-    public float jumpImpulse = 10f;
+    public float movingSpeed = 8f;
+    public float airMovingSpeed = 5f;
+    public float jumpImpulse = 9f;
     private Vector2 moveInput;
-    private Rigidbody2D rb;
-    private Animator animator;
-    private TouchingDirections touchingDirections;
-    private Damageable damageable;
 
     public float CurrentSpeed { 
         get
         {
             if(CanMove && IsMoving && !touchingDirections.IsOnWall)
             {
-                if(touchingDirections.IsGrounded)
-                {
-                    return movingSpeed;
-                }
-                else
-                {
-                    return airMovingSpeed;
-                }
-            }else
-            {
-                return 0f;
+                return touchingDirections.IsGrounded ? movingSpeed : airMovingSpeed;
             }
+            return 0f;
         }
     }
 
@@ -66,27 +53,6 @@ public class PlayerController : MonoBehaviour
             }
             _isFacingRight = value;
         } 
-    }
-    
-    public bool CanMove
-    {
-        get
-        {
-            return animator.GetBool(AnimationStrings.canMove);
-        }
-    }
-
-    public bool IsAlive
-    {
-        get { return animator.GetBool(AnimationStrings.isAlive); }
-    }
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        touchingDirections = GetComponent<TouchingDirections>();
-        damageable = GetComponent<Damageable>();
     }
 
     // This function will be called after a fixed amount of time (default is 0.02s) to compute physics
@@ -128,11 +94,6 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger(AnimationStrings.attackTrigger);
         }
-    }
-
-    public void OnHit(int damage, Vector2 knockback)
-    {
-        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
 
     private void SetFacingDirection(Vector2 moveInput)

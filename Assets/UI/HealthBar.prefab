@@ -426,7 +426,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5431583000046398048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e7b3fd3fcb9ee443888979466c222cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 481b56d6ac4398d4e96be7d2830fb132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 8741509763846839318}

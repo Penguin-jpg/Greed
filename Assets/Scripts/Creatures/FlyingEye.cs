@@ -2,63 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingEye : MonoBehaviour
+public class FlyingEye : Enemy
 {
     public float flightSpeed = 3f;
-    public DetectionZone biteDetectionZone;
     public BoxCollider2D deathCollider;
     public List<Transform> waypoints;
     public float waypointReachedDistance = 0.1f;
-    private Animator animator;
-    private Rigidbody2D rb;
-    private Damageable damageable;
     private int waypointIndex = 0;
     private Transform nextWaypoint;
-
-    private bool _hasTarget = false;
-    public bool HasTarget
-    {
-        get { return _hasTarget; }
-        private set
-        {
-            _hasTarget = value;
-            animator.SetBool(AnimationStrings.hasTarget, value);
-        }
-    }
-
-    public bool CanMove
-    {
-        get { return animator.GetBool(AnimationStrings.canMove); }
-    }
-
-    public float AttackCooldown
-    {
-        get
-        {
-            return animator.GetFloat(AnimationStrings.attackCooldown);
-        }
-        private set
-        {
-            animator.SetFloat(AnimationStrings.attackCooldown, Mathf.Max(value, 0));
-        }
-    }
-
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        damageable = GetComponent<Damageable>();
-    }
 
     private void Start()
     {
         nextWaypoint = waypoints[waypointIndex];
+        Destroy(touchingDirections); // destroy this since FlyingEye won't use it
     }
 
     // Update is called once per frame
     void Update()
     {
-        HasTarget = biteDetectionZone.detectedColliders.Count > 0;
+        HasTarget = attackZone.detectedColliders.Count > 0;
         AttackCooldown -= Time.deltaTime;
     }
 
@@ -93,15 +55,11 @@ public class FlyingEye : MonoBehaviour
     private void UpdateDirection()
     {
         Vector3 localScale = transform.localScale;
-        if (localScale.x > 0)
+        if (localScale.x > 0 && rb.velocity.x < 0)
         {
-            if (rb.velocity.x < 0)
-            {
-                transform.localScale = new Vector3(-1 * localScale.x, localScale.y, localScale.z);
-
-            }
+            transform.localScale = new Vector3(-1 * localScale.x, localScale.y, localScale.z);
         }
-        else if (rb.velocity.x > 0)
+        else if (localScale.x < 0 && rb.velocity.x > 0)
         {
             transform.localScale = new Vector3(-1 * localScale.x, localScale.y, localScale.z);
         }

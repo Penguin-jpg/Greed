@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class HealthText : MonoBehaviour
+public class FloatingText : MonoBehaviour
 {
     public Vector3 movingSpeed = new Vector3(0, 75, 0);
     public float timeToFade = 1f;

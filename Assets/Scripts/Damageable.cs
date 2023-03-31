@@ -84,7 +84,7 @@ public class Damageable : MonoBehaviour
         }
     }
 
-    public bool Hit(int damage, Vector2 knockback)
+    public void Hit(int damage, Vector2 knockback)
     {
         if(IsAlive && !isInvincible)
         {
@@ -94,12 +94,10 @@ public class Damageable : MonoBehaviour
             LockVelocity = true;
             damageableHit?.Invoke(damage, knockback);
             CharacterEvents.characterDamaged.Invoke(gameObject, damage);
-            return true;
         }
-        return false;
     }
 
-    public bool Heal(int healthRestore)
+    public void Heal(int healthRestore)
     {
         if(IsAlive)
         {
@@ -107,8 +105,6 @@ public class Damageable : MonoBehaviour
             int actualHeal = Mathf.Min(maxHeal, healthRestore);
             Health += actualHeal;
             CharacterEvents.characterHealed.Invoke(gameObject, actualHeal);
-            return true;
         }
-        return false;
     }
 }

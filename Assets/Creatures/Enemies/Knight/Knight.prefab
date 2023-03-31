@@ -306,14 +306,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4649742527222303426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc5ad34a1057dec4881b70d625a1dcee, type: 3}
+  m_Script: {fileID: 11500000, guid: 8eb99d16683c35b47b6f110d81d338ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackZone: {fileID: 810568713614026503}
   movingAcceleration: 300
   maxSpeed: 3
   moveStopRate: 0.05
-  attackZone: {fileID: 810568713614026503}
   cliffDetectionZone: {fileID: 5977433757937767069}
+  walkDriectionVector: {x: 1, y: 0}
 --- !u!114 &1160843939314248847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +397,9 @@ MonoBehaviour:
   damageableDeath:
     m_PersistentCalls:
       m_Calls: []
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
   _maxHealth: 100
   _health: 100
   _isAlive: 1
@@ -413,7 +417,7 @@ GameObject:
   - component: {fileID: 1713980708009060462}
   - component: {fileID: 810568713614026503}
   m_Layer: 10
-  m_Name: HitboxDetectionZone
+  m_Name: AttackZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
