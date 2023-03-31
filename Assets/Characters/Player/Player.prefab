@@ -424,7 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingSpeed: 8
   airMovingSpeed: 5
-  jumpImpulse: 8
+  jumpImpulse: 9
   _isMoving: 0
 --- !u!114 &1585545843396267868
 MonoBehaviour:
@@ -644,6 +644,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   damageableDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  healthChanged:
     m_PersistentCalls:
       m_Calls: []
   _maxHealth: 100
