@@ -128,7 +128,7 @@ MonoBehaviour:
   NoCollidersRemain:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 273712455366686863}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Knight, Assembly-CSharp
         m_MethodName: OnCliffDetected
         m_Mode: 1
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 4649742527222303427}
   - component: {fileID: 4403619733500543636}
   - component: {fileID: 513787953315471594}
-  - component: {fileID: 273712455366686863}
+  - component: {fileID: 3747342896835215886}
   - component: {fileID: 1160843939314248847}
   - component: {fileID: 8116682717545853652}
   - component: {fileID: 5906768452261254848}
@@ -297,7 +297,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.10078335, y: -0.018787384}
   m_Size: {x: 1.1294107, y: 2.3644552}
   m_Direction: 0
---- !u!114 &273712455366686863
+--- !u!114 &3747342896835215886
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4649742527222303426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eb99d16683c35b47b6f110d81d338ac, type: 3}
+  m_Script: {fileID: 11500000, guid: c73da83ff73ec5b458275ebd7289ad99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackZone: {fileID: 810568713614026503}
@@ -382,7 +382,7 @@ MonoBehaviour:
   damageableHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 273712455366686863}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Knight, Assembly-CSharp
         m_MethodName: OnHit
         m_Mode: 0

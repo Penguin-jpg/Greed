@@ -1,8 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingEye : Enemy
+
+public class AirEnemy : Enemy
 {
     public float flightSpeed = 3f;
     public BoxCollider2D deathCollider;

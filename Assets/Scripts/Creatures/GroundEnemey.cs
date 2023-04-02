@@ -1,9 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
-public class Knight : Enemy
+public class GroundEnemey : Enemy
 {
     public float movingAcceleration = 300f;
     public float maxSpeed = 3f;
@@ -19,7 +17,7 @@ public class Knight : Enemy
         get { return _walkDirection; }
         set
         {
-            if(_walkDirection != value)
+            if (_walkDirection != value)
             {
                 // flip
                 gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * -1, gameObject.transform.localScale.y);
@@ -31,14 +29,14 @@ public class Knight : Enemy
 
     // Update is called once per frame
     void Update()
-    { 
+    {
         HasTarget = attackZone.detectedColliders.Count > 0;
         AttackCooldown -= Time.deltaTime;
     }
 
     private void FixedUpdate()
     {
-        if(touchingDirections.IsGrounded && touchingDirections.IsOnWall)
+        if (touchingDirections.IsGrounded && touchingDirections.IsOnWall)
         {
             FlipDirection();
         }
@@ -47,7 +45,7 @@ public class Knight : Enemy
             if (CanMove)
             {
                 rb.velocity = new Vector2(
-                    Mathf.Clamp(rb.velocity.x + (movingAcceleration * walkDriectionVector.x * Time.fixedDeltaTime), -maxSpeed, maxSpeed), 
+                    Mathf.Clamp(rb.velocity.x + (movingAcceleration * walkDriectionVector.x * Time.fixedDeltaTime), -maxSpeed, maxSpeed),
                     rb.velocity.y
                 );
             }
@@ -66,7 +64,7 @@ public class Knight : Enemy
 
     public void OnCliffDetected()
     {
-        if(touchingDirections.IsGrounded)
+        if (touchingDirections.IsGrounded)
         {
             FlipDirection();
         }
