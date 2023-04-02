@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3365193099374508050}
-  - component: {fileID: 4872642477055484162}
+  - component: {fileID: 5195215649971847855}
   - component: {fileID: 5436833212706027760}
   m_Layer: 10
   m_Name: SwordAttack
@@ -33,8 +33,8 @@ Transform:
   m_Father: {fileID: 4649742527222303436}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &4872642477055484162
-PolygonCollider2D:
+--- !u!61 &5195215649971847855
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -46,7 +46,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 1.8816068, y: 0.11464834}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,16 +56,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.6001894, y: 1.4361033}
-      - {x: 0.45496702, y: 0.84202296}
-      - {x: 1.161082, y: 0.18075791}
-      - {x: 1.1465356, y: -0.103507996}
-      - {x: 0.7778239, y: -0.5708686}
-      - {x: 2.394318, y: -1.0632074}
-      - {x: 2.7303336, y: -0.5395044}
-      - {x: 2.510016, y: 0.6627102}
+  serializedVersion: 2
+  m_Size: {x: 1.6846857, y: 2.3901858}
+  m_EdgeRadius: 0
 --- !u!114 &5436833212706027760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,11 +68,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2193352228625271017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774417552342c0e48b856e0ffd758e2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea00377773939f468966a372938fd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
-  knockback: {x: 5, y: 2}
+  knockback: {x: 0, y: 0}
 --- !u!1 &2207048423674842075
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,24 +115,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2207048423674842075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b2416d2416c96c4796814a273e39c3b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6475c5daadf3f564492610154d517e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NoCollidersRemain:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
-        m_MethodName: OnCliffDetected
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   detectedColliders: []
 --- !u!61 &4015888322432565577
 BoxCollider2D:
@@ -182,7 +163,7 @@ GameObject:
   - component: {fileID: 3747342896835215886}
   - component: {fileID: 1160843939314248847}
   - component: {fileID: 8116682717545853652}
-  - component: {fileID: 5906768452261254848}
+  - component: {fileID: 3467690416211752368}
   m_Layer: 8
   m_Name: Knight
   m_TagString: Untagged
@@ -324,7 +305,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4649742527222303426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82e94ca706c871e40b282f9fb2c97f75, type: 3}
+  m_Script: {fileID: 11500000, guid: e759d030d8832b84898a2ca311a9ab44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   castFilter:
@@ -367,7 +348,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &5906768452261254848
+--- !u!114 &3467690416211752368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -376,14 +357,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4649742527222303426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d17f2d0c718723a49b1fb84150f8d6e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 77b61804b7fc1ef47a64bd73699ff0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damageableHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
+      - m_Target: {fileID: 3747342896835215886}
+        m_TargetAssemblyTypeName: Creature, Assembly-CSharp
         m_MethodName: OnHit
         m_Mode: 0
         m_Arguments:
@@ -404,7 +385,7 @@ MonoBehaviour:
   _health: 100
   _isAlive: 1
   isInvincible: 0
-  invincibilityTime: 0.25
+  invincibilityTime: 0.3
 --- !u!1 &8830500869201187045
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +454,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8830500869201187045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b2416d2416c96c4796814a273e39c3b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6475c5daadf3f564492610154d517e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NoCollidersRemain:

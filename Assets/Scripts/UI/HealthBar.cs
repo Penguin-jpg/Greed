@@ -19,7 +19,7 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthSlider.value = (float)playerDamageable.Health / playerDamageable.MaxHealth;
+        healthSlider.value = (float) playerDamageable.Health / playerDamageable.MaxHealth;
         healthBarText.text = "HP " + playerDamageable.Health + " / " + playerDamageable.MaxHealth;
     }
 
@@ -35,7 +35,8 @@ public class HealthBar : MonoBehaviour
 
     private void OnPlayerHealthChanged(int newHealth, int maxHealth)
     {
-        healthSlider.value = (float)newHealth / maxHealth;
+        newHealth = Mathf.Max(0, newHealth);
+        healthSlider.value = (float) newHealth / maxHealth;
         healthBarText.text = "HP " + newHealth + " / " + playerDamageable.MaxHealth;
     }
 }

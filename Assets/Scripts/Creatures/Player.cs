@@ -10,7 +10,9 @@ public class Player : Creature
     public float movingSpeed = 8f;
     public float airMovingSpeed = 5f;
     public float jumpImpulse = 9f;
+    public MessageText deadMessage;
     private Vector2 moveInput;
+
 
     public float CurrentSpeed { 
         get
@@ -63,6 +65,14 @@ public class Player : Creature
             rb.velocity = new Vector2(moveInput.x * CurrentSpeed, rb.velocity.y);
         }
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
+    }
+
+    private void Update()
+    {
+        if(!damageable.IsAlive)
+        {
+            deadMessage.visible = true;
+        }
     }
 
     // Things to do when player moves

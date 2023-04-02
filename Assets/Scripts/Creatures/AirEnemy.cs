@@ -1,19 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 
 public class AirEnemy : Enemy
 {
     public float flightSpeed = 3f;
     public BoxCollider2D deathCollider;
-    public List<Transform> waypoints;
+    public GameObject waypointsParent;
     public float waypointReachedDistance = 0.1f;
+    private List<Transform> waypoints;
     private int waypointIndex = 0;
     private Transform nextWaypoint;
 
     private void Start()
     {
+        // get tranforms of children without getting the parent transform
+        waypoints = waypointsParent.GetComponentsInChildren<Transform>().Where(t => t.transform != waypointsParent.transform).ToList<Transform>();
         nextWaypoint = waypoints[waypointIndex];
         Destroy(touchingDirections); // destroy this since FlyingEye won't use it
     }

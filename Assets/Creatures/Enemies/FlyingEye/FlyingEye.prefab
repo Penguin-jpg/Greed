@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 468933091981106324}
   - component: {fileID: 4584464779909212508}
   - component: {fileID: 7200076205300235524}
-  - component: {fileID: 1875412199364813526}
   - component: {fileID: 3314722598068676223}
   - component: {fileID: 4430776721496862322}
+  - component: {fileID: 332381919470782664}
+  - component: {fileID: 2391763247739073329}
   m_Layer: 8
   m_Name: FlyingEye
   m_TagString: Untagged
@@ -129,44 +130,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.36316156, y: -0.20294295}
   m_Size: {x: 0.8300247, y: 1.3213613}
   m_Direction: 0
---- !u!114 &1875412199364813526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000237510328268489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d17f2d0c718723a49b1fb84150f8d6e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageableHit:
-    m_PersistentCalls:
-      m_Calls: []
-  damageableDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FlyingEye, Assembly-CSharp
-        m_MethodName: OnDeath
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  healthChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  _maxHealth: 50
-  _health: 50
-  _isAlive: 1
-  isInvincible: 0
-  invincibilityTime: 0.5
 --- !u!95 &3314722598068676223
 Animator:
   serializedVersion: 5
@@ -202,8 +165,78 @@ MonoBehaviour:
   attackZone: {fileID: 6580996863057061529}
   flightSpeed: 3
   deathCollider: {fileID: 5009962922487494827}
-  waypoints: []
+  waypointsParent: {fileID: 0}
   waypointReachedDistance: 0.1
+--- !u!114 &332381919470782664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000237510328268489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b61804b7fc1ef47a64bd73699ff0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageableHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4430776721496862322}
+        m_TargetAssemblyTypeName: Creature, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  damageableDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxHealth: 50
+  _health: 50
+  _isAlive: 1
+  isInvincible: 0
+  invincibilityTime: 0.3
+--- !u!114 &2391763247739073329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000237510328268489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e759d030d8832b84898a2ca311a9ab44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  groundDistance: 0.05
+  wallDistance: 0.2
+  ceilingDistance: 0.05
+  _isGrounded: 0
+  _isOnWall: 0
+  _isOnCeiling: 0
 --- !u!1 &2330043722132950398
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +277,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2330043722132950398}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -262,7 +295,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2330043722132950398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774417552342c0e48b856e0ffd758e2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea00377773939f468966a372938fd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 15
@@ -383,7 +416,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7570264651416821011}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b2416d2416c96c4796814a273e39c3b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6475c5daadf3f564492610154d517e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NoCollidersRemain:

@@ -68,7 +68,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 206239996114983055}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774417552342c0e48b856e0ffd758e2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea00377773939f468966a372938fd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 20
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 752303968318301958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774417552342c0e48b856e0ffd758e2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea00377773939f468966a372938fd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1277972098342528496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774417552342c0e48b856e0ffd758e2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea00377773939f468966a372938fd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 25
@@ -229,7 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2133471273903756256}
   - component: {fileID: 4622875639272451315}
-  - component: {fileID: 1638860732011148507}
+  - component: {fileID: 6609828094296696158}
   m_Layer: 9
   m_Name: SwordAttack1
   m_TagString: Untagged
@@ -278,7 +278,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.6226144, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1638860732011148507
+--- !u!114 &6609828094296696158
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2188461274172642065}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774417552342c0e48b856e0ffd758e2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea00377773939f468966a372938fd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 15
@@ -307,8 +307,8 @@ GameObject:
   - component: {fileID: 1585545843396267868}
   - component: {fileID: 7484810374003590263}
   - component: {fileID: 3259273054570790378}
-  - component: {fileID: 1887706747302626615}
-  - component: {fileID: 7909216214395976550}
+  - component: {fileID: 3199419664134061833}
+  - component: {fileID: 7208512032779197243}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -409,7 +409,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8954191585396187653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,7 +584,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.072567105, y: -0.18001908}
   m_Size: {x: 0.6133168, y: 1.2600619}
   m_Direction: 0
---- !u!114 &1887706747302626615
+--- !u!114 &3199419664134061833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -593,7 +593,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4084044982463830704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82e94ca706c871e40b282f9fb2c97f75, type: 3}
+  m_Script: {fileID: 11500000, guid: e759d030d8832b84898a2ca311a9ab44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   castFilter:
@@ -616,7 +616,7 @@ MonoBehaviour:
   _isGrounded: 0
   _isOnWall: 0
   _isOnCeiling: 0
---- !u!114 &7909216214395976550
+--- !u!114 &7208512032779197243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -625,14 +625,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4084044982463830704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d17f2d0c718723a49b1fb84150f8d6e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 77b61804b7fc1ef47a64bd73699ff0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damageableHit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8954191585396187653}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_TargetAssemblyTypeName: Creature, Assembly-CSharp
         m_MethodName: OnHit
         m_Mode: 0
         m_Arguments:
@@ -653,7 +653,7 @@ MonoBehaviour:
   _health: 100
   _isAlive: 1
   isInvincible: 0
-  invincibilityTime: 0.25
+  invincibilityTime: 1
 --- !u!1 &7357402157122775616
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,7 +722,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7357402157122775616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774417552342c0e48b856e0ffd758e2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea00377773939f468966a372938fd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 20
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8725840608861055814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774417552342c0e48b856e0ffd758e2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea00377773939f468966a372938fd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 15
