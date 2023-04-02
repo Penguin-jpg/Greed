@@ -15,7 +15,7 @@ public class FloatingText : MonoBehaviour
     private void Awake()
     {
         textTransform = GetComponent<RectTransform>();
-        textMeshPro = GetComponent<TextMeshProUGUI > ();
+        textMeshPro = GetComponent<TextMeshProUGUI>();
         startColor = textMeshPro.color;
     }
 
