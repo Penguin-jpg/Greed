@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlaySoundBehaviour : StateMachineBehaviour
 {
-    public AudioClip sound;
+    public string source;
     public float volume = 1f;
     public bool playerOnEnter = true, playOnExit = false, playAfterDelay = false;
     public float playDelay = 0.25f;
@@ -16,7 +16,7 @@ public class PlaySoundBehaviour : StateMachineBehaviour
     {
         if(playerOnEnter)
         {
-            AudioSource.PlayClipAtPoint(sound, animator.gameObject.transform.position, volume);
+            SoundManager.PlaySound(source);
         }
         timeElapsed = 0f;
         hasDelayedSoundPlayed = false;
@@ -30,7 +30,7 @@ public class PlaySoundBehaviour : StateMachineBehaviour
             timeElapsed += Time.deltaTime;
             if(timeElapsed > playDelay)
             {
-                AudioSource.PlayClipAtPoint(sound, animator.gameObject.transform.position, volume);
+                SoundManager.PlaySound(source);
                 hasDelayedSoundPlayed = true;
             }
         }
