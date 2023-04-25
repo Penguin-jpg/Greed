@@ -7045,43 +7045,6 @@ Transform:
   m_Father: {fileID: 1683479458}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &572567221 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4649742527222303426, guid: 35d0d8a980523884c8ecbee73034db19, type: 3}
-  m_PrefabInstance: {fileID: 4649742526719614148}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &572567232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 572567221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e759d030d8832b84898a2ca311a9ab44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castFilter:
-    useTriggers: 0
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 64
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  groundDistance: 0.05
-  wallDistance: 0.2
-  ceilingDistance: 0.05
-  _isGrounded: 0
-  _isOnWall: 0
-  _isOnCeiling: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Enemy : Creature
+public class Enemy : Creature // 怪物的父類別
 {
+    // 偵測玩家的範圍
     public DetectionZone attackZone;
 
+    // 範圍內是否出現玩家
     protected bool _hasTarget = false;
     public bool HasTarget
     {
@@ -16,6 +18,7 @@ public class Enemy : Creature
         }
     }
 
+    // 攻擊冷卻時間
     public float AttackCooldown
     {
         get

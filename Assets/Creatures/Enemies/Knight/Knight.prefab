@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 5977433757937767069}
   - component: {fileID: 4015888322432565577}
   m_Layer: 11
-  m_Name: CliffDetectionZone
+  m_Name: EdgeDetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,9 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6475c5daadf3f564492610154d517e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoCollidersRemain:
-    m_PersistentCalls:
-      m_Calls: []
   detectedColliders: []
 --- !u!61 &4015888322432565577
 BoxCollider2D:
@@ -161,7 +158,7 @@ GameObject:
   - component: {fileID: 4403619733500543636}
   - component: {fileID: 513787953315471594}
   - component: {fileID: 3747342896835215886}
-  - component: {fileID: 1160843939314248847}
+  - component: {fileID: 1337964732923253313}
   - component: {fileID: 8116682717545853652}
   - component: {fileID: 3467690416211752368}
   m_Layer: 8
@@ -294,9 +291,9 @@ MonoBehaviour:
   movingAcceleration: 300
   maxSpeed: 3
   moveStopRate: 0.05
-  cliffDetectionZone: {fileID: 5977433757937767069}
-  walkDriectionVector: {x: 1, y: 0}
---- !u!114 &1160843939314248847
+  edegDetectionZone: {fileID: 5977433757937767069}
+  movingDirection: {x: 1, y: 0}
+--- !u!114 &1337964732923253313
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -305,7 +302,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4649742527222303426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e759d030d8832b84898a2ca311a9ab44, type: 3}
+  m_Script: {fileID: 11500000, guid: a73db9c519f712e4eacbd8903c48b6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   castFilter:
@@ -325,9 +322,6 @@ MonoBehaviour:
   groundDistance: 0.05
   wallDistance: 0.2
   ceilingDistance: 0.05
-  _isGrounded: 0
-  _isOnWall: 0
-  _isOnCeiling: 0
 --- !u!95 &8116682717545853652
 Animator:
   serializedVersion: 5
@@ -360,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b61804b7fc1ef47a64bd73699ff0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageableHit:
+  damageableKnockback:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3747342896835215886}
@@ -457,7 +451,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6475c5daadf3f564492610154d517e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoCollidersRemain:
-    m_PersistentCalls:
-      m_Calls: []
   detectedColliders: []

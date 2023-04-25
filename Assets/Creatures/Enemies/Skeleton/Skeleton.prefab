@@ -144,9 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6475c5daadf3f564492610154d517e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoCollidersRemain:
-    m_PersistentCalls:
-      m_Calls: []
   detectedColliders: []
 --- !u!1 &7002690729309984859
 GameObject:
@@ -163,7 +160,7 @@ GameObject:
   - component: {fileID: 1246455978258964968}
   - component: {fileID: 4725097765861086076}
   - component: {fileID: 7457757709622840099}
-  - component: {fileID: 7089947530921055548}
+  - component: {fileID: 8414515882305143105}
   m_Layer: 8
   m_Name: Skeleton
   m_TagString: Untagged
@@ -314,8 +311,8 @@ MonoBehaviour:
   movingAcceleration: 300
   maxSpeed: 3
   moveStopRate: 0.05
-  cliffDetectionZone: {fileID: 5216920942670521556}
-  walkDriectionVector: {x: 1, y: 0}
+  edegDetectionZone: {fileID: 5216920942670521556}
+  movingDirection: {x: 1, y: 0}
 --- !u!114 &7457757709622840099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b61804b7fc1ef47a64bd73699ff0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageableHit:
+  damageableKnockback:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4725097765861086076}
@@ -354,7 +351,7 @@ MonoBehaviour:
   _isAlive: 1
   isInvincible: 0
   invincibilityTime: 0.5
---- !u!114 &7089947530921055548
+--- !u!114 &8414515882305143105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,7 +360,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7002690729309984859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e759d030d8832b84898a2ca311a9ab44, type: 3}
+  m_Script: {fileID: 11500000, guid: a73db9c519f712e4eacbd8903c48b6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   castFilter:
@@ -383,9 +380,6 @@ MonoBehaviour:
   groundDistance: 0.05
   wallDistance: 0.2
   ceilingDistance: 0.05
-  _isGrounded: 0
-  _isOnWall: 0
-  _isOnCeiling: 0
 --- !u!1 &7642887913365170003
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +392,7 @@ GameObject:
   - component: {fileID: 5216920942670521556}
   - component: {fileID: 8793413042114301055}
   m_Layer: 11
-  m_Name: CliffDetectionZone
+  m_Name: EdgeDetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,9 +425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6475c5daadf3f564492610154d517e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoCollidersRemain:
-    m_PersistentCalls:
-      m_Calls: []
   detectedColliders: []
 --- !u!61 &8793413042114301055
 BoxCollider2D:

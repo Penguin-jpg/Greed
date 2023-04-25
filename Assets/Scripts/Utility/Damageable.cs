@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Damageable : MonoBehaviour
+public class Damageable : MonoBehaviour // 可傷害實體
 {
-    public UnityEvent<int, Vector2> damageableHit;
+    // 被打到時觸發的事件(擊退)
+    public UnityEvent<int, Vector2> damageableKnockback;
+    // 死亡時觸發的事件
     public UnityEvent damageableDeath;
+    // 血量改變時觸發的事件
     public UnityEvent<int, int> healthChanged;
     private Animator animator;
+
     [SerializeField]
     private int _maxHealth = 100;
+    // 最大血量
     public int MaxHealth
     {
         get { return _maxHealth; }
@@ -22,14 +27,17 @@ public class Damageable : MonoBehaviour
 
     [SerializeField]
     private int _health = 100;
+    // 目前血量
     public int Health
     {
         get { return _health; }
         set
         {
             _health = value;
+            // 血量改變導致事件觸發
             healthChanged?.Invoke(_health, MaxHealth);
-            if(_health <= 0)
+            // 死亡
+            if (_health <= 0)
             {
                 IsAlive = false;
             }
@@ -45,13 +53,15 @@ public class Damageable : MonoBehaviour
         {
             _isAlive = value;
             animator.SetBool(AnimationStrings.isAlive, value);
-            if(value == false)
+            // 死亡導致事件觸發
+            if (value == false)
             {
                 damageableDeath.Invoke();
             }
         }
     }
 
+    // 是否鎖定速度(例如被打時)
     public bool LockVelocity
     {
         get { return animator.GetBool(AnimationStrings.lockVelocity); }
@@ -62,9 +72,9 @@ public class Damageable : MonoBehaviour
     }
 
     [SerializeField]
-    private bool isInvincible = false;
+    private bool isInvincible = false; // 是否無敵
     private float timeSinceHit = 0f;
-    public float invincibilityTime = 1f;
+    public float invincibilityTime = 1f; // 無敵timer
 
     private void Awake()
     {
@@ -73,6 +83,7 @@ public class Damageable : MonoBehaviour
 
     private void Update()
     {
+        // 遞減無敵時間
         if (isInvincible)
         {
             if (timeSinceHit > invincibilityTime)
@@ -84,26 +95,37 @@ public class Damageable : MonoBehaviour
         }
     }
 
+    // 被打時要做的事
     public void Hit(int damage, Vector2 knockback)
     {
-        if(IsAlive && !isInvincible)
+        // 還活著且非無敵
+        if (IsAlive && !isInvincible)
         {
+            // 被打時扣血並進入無敵狀態
             Health -= damage;
             isInvincible = true;
+            // 觸發被打動畫
             animator.SetTrigger(AnimationStrings.hitTrigger);
+            // 鎖住速度
             LockVelocity = true;
-            damageableHit?.Invoke(damage, knockback);
+            // 觸發事件(擊退)
+            damageableKnockback?.Invoke(damage, knockback);
+            // 觸發顯示傷害數字的事件
             CharacterEvents.characterDamaged.Invoke(gameObject, damage);
         }
     }
 
+    // 補血時要做的事
     public void Heal(int healthRestore)
     {
-        if(IsAlive)
+        if (IsAlive)
         {
+            // 最大補血量(不會補超過最大血量)
             int maxHeal = Mathf.Max(MaxHealth - Health, 0);
+            // 實際補血量(不能補超過最大補血量)
             int actualHeal = Mathf.Min(maxHeal, healthRestore);
             Health += actualHeal;
+            // 觸發顯示補血數字的事件
             CharacterEvents.characterHealed.Invoke(gameObject, actualHeal);
         }
     }

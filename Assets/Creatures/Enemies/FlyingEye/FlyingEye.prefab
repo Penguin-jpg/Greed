@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3314722598068676223}
   - component: {fileID: 4430776721496862322}
   - component: {fileID: 332381919470782664}
-  - component: {fileID: 2391763247739073329}
+  - component: {fileID: 340103681106385425}
   m_Layer: 8
   m_Name: FlyingEye
   m_TagString: Untagged
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b61804b7fc1ef47a64bd73699ff0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageableHit:
+  damageableKnockback:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4430776721496862322}
@@ -205,7 +205,7 @@ MonoBehaviour:
   _isAlive: 1
   isInvincible: 0
   invincibilityTime: 0.3
---- !u!114 &2391763247739073329
+--- !u!114 &340103681106385425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2000237510328268489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e759d030d8832b84898a2ca311a9ab44, type: 3}
+  m_Script: {fileID: 11500000, guid: a73db9c519f712e4eacbd8903c48b6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   castFilter:
@@ -234,9 +234,6 @@ MonoBehaviour:
   groundDistance: 0.05
   wallDistance: 0.2
   ceilingDistance: 0.05
-  _isGrounded: 0
-  _isOnWall: 0
-  _isOnCeiling: 0
 --- !u!1 &2330043722132950398
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +416,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6475c5daadf3f564492610154d517e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoCollidersRemain:
-    m_PersistentCalls:
-      m_Calls: []
   detectedColliders: []
