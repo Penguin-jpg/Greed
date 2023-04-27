@@ -37881,6 +37881,10 @@ PrefabInstance:
       propertyPath: warningText
       value: 
       objectReference: {fileID: 869382768738540511}
+    - target: {fileID: 5051218232200284966, guid: 598bab353258f804b8fd33f17258fd5e, type: 3}
+      propertyPath: warningMessage
+      value: 
+      objectReference: {fileID: 869382768738540511}
     - target: {fileID: 8899218952844928824, guid: 598bab353258f804b8fd33f17258fd5e, type: 3}
       propertyPath: m_Size.x
       value: 1.9079722

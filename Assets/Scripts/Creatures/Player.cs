@@ -62,7 +62,7 @@ public class Player : Creature
             // 如果轉向了，就把sprite轉向
             if (_isFacingRight != value)
             {
-                // flip the local scale to change facing direction
+                // 轉localScale就能把sprite轉向
                 transform.localScale *= new Vector2(-1, 1);
             }
             _isFacingRight = value;

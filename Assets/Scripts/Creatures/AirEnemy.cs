@@ -33,7 +33,7 @@ public class AirEnemy : Enemy // 空中的敵人
     // 概念和地面敵人一樣
     void Update()
     {
-        HasTarget = attackZone.detectedColliders.Count > 0;
+        HasTarget = attackZone.Detected;
         AttackCooldown -= Time.deltaTime;
     }
 
@@ -60,8 +60,8 @@ public class AirEnemy : Enemy // 空中的敵人
         // 到waypoint的距離
         float distance = Vector2.Distance(targetWaypoint.position, transform.position);
         rb.velocity = directionToWaypoint * flightSpeed;
-        // 更新目前面向方向(不一定會轉向)
-        UpdateDirection();
+        // 更新目前面向方向
+        FlipDirection();
         // 離目標waypoint夠進之後就改往下一個waypoint前進
         if (distance <= waypointReachedDistance)
         {
@@ -70,8 +70,8 @@ public class AirEnemy : Enemy // 空中的敵人
         }
     }
 
-    // 更新目前面向方向(不一定會轉向)
-    private void UpdateDirection()
+    // 更新目前面向方向
+    private void FlipDirection()
     {
         // 目前的x方向
         float xDirection = transform.localScale.x;

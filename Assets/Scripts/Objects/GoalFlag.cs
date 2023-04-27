@@ -8,7 +8,7 @@ public class GoalFlag : MonoBehaviour // 終點
     // 勝利訊息
     public MessageText winMessage;
     // 警告訊息
-    public MessageText warningText;
+    public MessageText warningMessage;
     // boss的可傷害實體(用來遊戲是否結束)
     public Damageable boss;
     // 警告顯示時間
@@ -32,7 +32,7 @@ public class GoalFlag : MonoBehaviour // 終點
             }
             else
             {
-                warningText.visible = false;
+                warningMessage.visible = false;
                 timeElapsed = 0f;
                 warningTriggered = false;
             }
@@ -55,12 +55,12 @@ public class GoalFlag : MonoBehaviour // 終點
         if (boss.IsAlive)
         {
             warningTriggered = true;
-            warningText.visible = true;
+            warningMessage.visible = true;
         }
         else
         {
             warningTriggered = false;
-            warningText.visible = false;
+            warningMessage.visible = false;
             winMessage.visible = true;
             canFinish = true;
             timeElapsed = 0f;

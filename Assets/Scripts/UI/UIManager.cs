@@ -18,31 +18,31 @@ public class UIManager : MonoBehaviour
     private void OnEnable()
     {
         // 加入監聽
-        CharacterEvents.characterDamaged += ChracterDamaged;
-        CharacterEvents.characterHealed += CharacterHealed;
+        CreatureEvents.creatureDamaged += CreatureDamaged;
+        CreatureEvents.creatureHealed += CreatureHealed;
     }
 
     private void OnDisable()
     {
-        CharacterEvents.characterDamaged -= ChracterDamaged;
-        CharacterEvents.characterHealed -= CharacterHealed;
+        CreatureEvents.creatureDamaged -= CreatureDamaged;
+        CreatureEvents.creatureHealed -= CreatureHealed;
     }
 
-    // 角色受傷時觸發
-    public void ChracterDamaged(GameObject character, int damageReceived)
+    // 生物受傷時觸發
+    public void CreatureDamaged(GameObject creature, int damageReceived)
     {
-        // 根據玩家位置決定漂浮文字生成位置
-        Vector3 spawnPosition = Camera.main.WorldToScreenPoint(character.transform.position);
+        // 根據生物位置決定漂浮文字生成位置
+        Vector3 spawnPosition = Camera.main.WorldToScreenPoint(creature.transform.position);
         // 生成漂浮文字
         TMP_Text tmpText = Instantiate(damageTextPrefab, spawnPosition, Quaternion.identity, gameCanvas.transform).GetComponent<TMP_Text>();
         tmpText.text = damageReceived.ToString();
     }
 
-    // 角色補血時觸發
-    public void CharacterHealed(GameObject character, int healthRestored)
+    // 生物補血時觸發
+    public void CreatureHealed(GameObject creature, int healthRestored)
     {
         // 概念跟受傷的function相同
-        Vector3 spawnPosition = Camera.main.WorldToScreenPoint(character.transform.position);
+        Vector3 spawnPosition = Camera.main.WorldToScreenPoint(creature.transform.position);
         TMP_Text tmpText = Instantiate(healthTextPrefab, spawnPosition, Quaternion.identity, gameCanvas.transform).GetComponent<TMP_Text>();
         tmpText.text = healthRestored.ToString();
     }

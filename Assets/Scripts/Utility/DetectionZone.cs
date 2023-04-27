@@ -7,6 +7,12 @@ public class DetectionZone : MonoBehaviour // 偵測範圍用
     // 偵測到的collider
     public List<Collider2D> detectedColliders = new List<Collider2D>();
 
+    // 範圍內是否偵測到其他Collider
+    public bool Detected
+    {
+        get { return detectedColliders.Count > 0; }
+    }
+
     // 偵測到其他collider時就將其加到detectedColliders
     private void OnTriggerEnter2D(Collider2D collision)
     {

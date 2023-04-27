@@ -111,7 +111,7 @@ public class Damageable : MonoBehaviour // 可傷害實體
             // 觸發事件(擊退)
             damageableKnockback?.Invoke(damage, knockback);
             // 觸發顯示傷害數字的事件
-            CharacterEvents.characterDamaged.Invoke(gameObject, damage);
+            CreatureEvents.creatureDamaged.Invoke(gameObject, damage);
         }
     }
 
@@ -126,7 +126,7 @@ public class Damageable : MonoBehaviour // 可傷害實體
             int actualHeal = Mathf.Min(maxHeal, healthRestore);
             Health += actualHeal;
             // 觸發顯示補血數字的事件
-            CharacterEvents.characterHealed.Invoke(gameObject, actualHeal);
+            CreatureEvents.creatureHealed.Invoke(gameObject, actualHeal);
         }
     }
 }

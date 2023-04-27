@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static Dictionary<string, AudioSource> sounds = new Dictionary<string, AudioSource>();
     public AudioSource slashSource;
     public AudioSource biteSource;
     public AudioSource deathSource;
     public AudioSource hitSource;
     public AudioSource healSource;
+    private static Dictionary<string, AudioSource> sounds = new Dictionary<string, AudioSource>();
 
     private void Awake()
     {

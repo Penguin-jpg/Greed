@@ -35,7 +35,7 @@ public class GroundEnemey : Enemy // 地面上的怪物
     void Update()
     {
         // 攻擊範圍內是否有偵測到玩家
-        HasTarget = attackZone.detectedColliders.Count > 0;
+        HasTarget = attackZone.Detected;
         // 攻擊開始進入冷卻
         AttackCooldown -= Time.deltaTime;
     }
