@@ -106,7 +106,7 @@ public class Player : Creature
         {
             // 紀錄是否在移動並將sprite轉向
             IsMoving = (moveInput != Vector2.zero);
-            SetFacingDirection(moveInput);
+            FlipDirection(moveInput);
         }
         else
         {
@@ -138,7 +138,7 @@ public class Player : Creature
     }
 
     // 調整sprite面向方向
-    private void SetFacingDirection(Vector2 moveInput)
+    private void FlipDirection(Vector2 moveInput)
     {
         // 輸入往右走卻面向左邊就轉到右邊
         if (moveInput.x > 0 && !IsFacingRight)

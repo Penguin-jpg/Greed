@@ -424,7 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingSpeed: 8
   airMovingSpeed: 5
-  jumpImpulse: 9
+  jumpImpulse: 10
   deadMessage: {fileID: 0}
   _isMoving: 0
 --- !u!114 &1585545843396267868

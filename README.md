@@ -17,8 +17,8 @@
 打敗最後的骷髏王再觸碰旗幟即可獲勝
 
 ## Asset 來源
-- [玩家](https://pixramen.itch.io/2d-action-platformer-sci-fi-vagabond)
-- [原先使用的女騎士主角](https://clembod.itch.io/warrior-free-animation-set)
+- [流浪者](https://pixramen.itch.io/2d-action-platformer-sci-fi-vagabond)
+- [女騎士(原本的玩家Sprite)](https://clembod.itch.io/warrior-free-animation-set)
 - [騎士怪物](https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character)
 - [飛行怪和骷髏](https://luizmelo.itch.io/monsters-creatures-fantasy)
-  
+- [Tileset](https://anokolisa.itch.io/moon-graveyard)
